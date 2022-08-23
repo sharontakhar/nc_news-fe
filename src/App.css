@@ -2,9 +2,23 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ClickableLink {
+  color: white;
+  font-size: 30px;
+}
+
+.logo {
+  font-family: "Russo One", sans-serif;
+  font-size: 70px;
+}
+
+.article_div {
+  background-color: rgb(200, 201, 202);
+  margin: auto;
+  width: 50%;
+  border: 20px solid white;
+  padding: 20px;
+  justify-content: space-between;
 }
 
 @media (prefers-reduced-motion: no-preference) {
