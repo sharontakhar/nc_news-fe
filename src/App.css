@@ -11,7 +11,9 @@
   font-family: "Russo One", sans-serif;
   font-size: 70px;
 }
-
+option {
+  color: red;
+}
 .article_div {
   background-color: rgb(200, 201, 202);
   margin: auto;
