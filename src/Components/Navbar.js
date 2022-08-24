@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
-        <div className="ClickableLink">Home</div>
-        <div className="ClickableLink">Topics</div>
+        <div className="ClickableLink">
+          <Link to="/articles">Home</Link>
+        </div>
+        <div className="ClickableLink">
+          <Link to="/topics">Topics </Link>
+        </div>
         <form className="d-flex input-group w-auto">
           <input
             type="search"
