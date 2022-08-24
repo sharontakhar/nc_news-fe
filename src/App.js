@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Components/Header";
+import Logo from "./Components/Logo.js";
+import Articles from "./Components/Articles";
+import HomePage from "./Components/HomePage";
+import Topics from "./Components/Topics";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
+  const [articles, setArticle] = useState([]);
+  const [topics, setTopics] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Logo />
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/articles"
+            element={<Articles articles={articles} setArticle={setArticle} />}
+          />
+          <Route path="/topics" element={<Topics topics={topics} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
