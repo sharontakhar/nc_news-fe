@@ -1,9 +1,17 @@
-const Header = () => {
+import { Link } from "react-router-dom";
+import React from "react";
+import Topics from "../Components/Topics";
+
+const Navbar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
-        <div className="ClickableLink">Home</div>
-        <div className="ClickableLink">Topics</div>
+        <div className="ClickableLink">
+          <Link to="/articles">Home</Link>
+        </div>
+        <div className="ClickableLink">
+          <Link to="/topics">Topics</Link>
+        </div>
         <form className="d-flex input-group w-auto">
           <input
             type="search"
@@ -24,4 +32,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

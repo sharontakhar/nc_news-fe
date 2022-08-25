@@ -1,27 +1,25 @@
 import "./App.css";
-import Header from "./Components/Header";
-import Logo from "./Components/Logo.js";
-import Articles from "./Components/Articles";
-import HomePage from "./Components/HomePage";
-import Topics from "./Components/Topics";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+// import AdBanner from "./images/ad_banner.png";
+import Articles from "./Components/Articles";
+import ArticlePage from "./Components/ArticlePage";
+import Logo from "./Components/Logo.js";
+import Navbar from "./Components/Navbar";
+import Topics from "./Components/Topics";
+import TopicPage from "./Components/TopicPage";
 
 function App() {
-  const [articles, setArticle] = useState([]);
-  const [topics, setTopics] = useState([]);
   return (
     <BrowserRouter>
       <div className="App">
         <Logo />
-        <Header />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/articles"
-            element={<Articles articles={articles} setArticle={setArticle} />}
-          />
-          <Route path="/topics" element={<Topics topics={topics} />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/topics" element={<Topics />} />
+          <Route path="/topics/:topic" element={<TopicPage />} />
+          <Route path="/articles/:article" element={<ArticlePage />} />
         </Routes>
       </div>
     </BrowserRouter>

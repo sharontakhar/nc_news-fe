@@ -1,4 +1,4 @@
-import { apiGetArticles } from "../Utils/api.js";
+import { apiGetArticles } from "../Utils/api";
 import React from "react";
 import { useState, useEffect } from "react";
 
@@ -15,9 +15,7 @@ const Articles = () => {
     <div>
       {articles.map((article) => {
         return (
-          <div className="article_div">
-            <h4>Article ID = {article.article_id}</h4>
-            <br></br>
+          <div className="article_div" key={article.article_id}>
             <h5>Title: {article.title}</h5>
             <br></br>
             {article.body}

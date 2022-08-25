@@ -11,7 +11,9 @@
   font-family: "Russo One", sans-serif;
   font-size: 70px;
 }
-
+option {
+  color: red;
+}
 .article_div {
   background-color: rgb(200, 201, 202);
   margin: auto;
@@ -19,12 +21,6 @@
   border: 20px solid white;
   padding: 20px;
   justify-content: space-between;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
