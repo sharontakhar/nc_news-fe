@@ -1,11 +1,12 @@
 import "./App.css";
-import Navbar from "./Components/Navbar";
-// import AdBanner from "./images/ad_banner.png";
-import Topics from "./Components/Topics";
-import Logo from "./Components/Logo.js";
-import Articles from "./Components/Articles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+// import AdBanner from "./images/ad_banner.png";
+import Articles from "./Components/Articles";
+import ArticlePage from "./Components/ArticlePage";
+import Logo from "./Components/Logo.js";
+import Navbar from "./Components/Navbar";
+import Topics from "./Components/Topics";
 import TopicPage from "./Components/TopicPage";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/topics" element={<Topics />} />
           <Route path="/topics/:topic" element={<TopicPage />} />
+          <Route path="/articles/:article" element={<ArticlePage />} />
         </Routes>
       </div>
     </BrowserRouter>

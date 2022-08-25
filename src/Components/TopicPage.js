@@ -8,16 +8,13 @@ const TopicPage = () => {
 
   useEffect(() => {
     apiGetArticlesByTopic(topic).then((response) => {
-      console.log(response, "response");
       setTopics(response.articles);
     });
   }, []);
 
-  console.log(topics, "topics");
   return (
     <div>
       {topics.map((topic) => {
-        console.log(topic, "topic in the loop");
         return (
           <div className="article_div">
             <h5>{topic.title}</h5>

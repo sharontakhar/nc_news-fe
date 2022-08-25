@@ -25,3 +25,12 @@ export const apiGetArticlesByTopic = (topic) => {
       return data;
     });
 };
+
+export const apiGetArticlesByArticleId = (articleId) => {
+  return axios
+    .get(`https://nc-news-be-app.herokuapp.com/api/articles/${articleId}`)
+    .then(({ data }) => {
+      console.log(data);
+      return data;
+    });
+};

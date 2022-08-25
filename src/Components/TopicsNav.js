@@ -1,6 +1,5 @@
 import { apiGetTopics } from "../Utils/api";
 import React from "react";
-import TopicCards from "./TopicCards";
 import { useState, useEffect } from "react";
 const TopicsNav = () => {
   const [topicsNav, setTopicsNav] = useState([]);
@@ -11,14 +10,10 @@ const TopicsNav = () => {
     });
   }, []);
 
-  function handleChangeTopic(e) {
-    e.preventDefault();
-  }
-
   return (
     <div className="TopicOptions">
       <nav>
-        <select className="selectTopic" onClick={handleChangeTopic}>
+        <select className="selectTopic">
           {topicsNav.map((topic) => {
             return (
               <option key={topic.slug} value="option 1">
@@ -27,7 +22,6 @@ const TopicsNav = () => {
             );
           })}
         </select>
-        <TopicCards />
       </nav>
     </div>
   );
