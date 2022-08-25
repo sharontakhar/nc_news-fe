@@ -3,22 +3,24 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const ArticlePage = () => {
-  const [articles, setArticle] = useState([]);
-  const { articleId } = useParams();
+  const [singleArticle, setSingleArticle] = useState({});
+  let { article } = useParams();
+  console.log(article);
 
   useEffect(() => {
-    apiGetArticlesByArticleId(articleId).then((response) => {
-      console.log(response, "this is the reponse");
-      setArticle(response.articles);
+    apiGetArticlesByArticleId(article).then((response) => {
+      console.log(response.articles);
+      setSingleArticle(response.articles);
     });
-  }, []);
+  }, [article]);
 
   return (
-    <div>
-      "this is the article page return"
-      {articles.map((article) => {
-        return console.log(article);
-      })}
+    <div className="article_div">
+      <h2>{singleArticle.title}</h2>
+      <p>{singleArticle.author}</p>
+      <p>{singleArticle.created_at}</p>
+      <p>{singleArticle.body}</p>
+      <p>{singleArticle.votes}</p>
     </div>
   );
 };

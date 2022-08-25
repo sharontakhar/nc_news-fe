@@ -26,11 +26,11 @@ export const apiGetArticlesByTopic = (topic) => {
     });
 };
 
-export const apiGetArticlesByArticleId = (articleId) => {
+export const apiGetArticlesByArticleId = (id) => {
+  console.log(id, "id from api.js");
   return axios
-    .get(`https://nc-news-be-app.herokuapp.com/api/articles/${articleId}`)
+    .get(`https://nc-news-be-app.herokuapp.com/api/articles/${id}`)
     .then(({ data }) => {
-      console.log(data);
       return data;
     });
 };
