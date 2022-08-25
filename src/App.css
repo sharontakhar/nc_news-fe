@@ -11,9 +11,11 @@
   font-family: "Russo One", sans-serif;
   font-size: 70px;
 }
-option {
-  color: red;
+
+#voteButton {
+  margin: 10px;
 }
+
 .article_div {
   background-color: rgb(200, 201, 202);
   margin: auto;

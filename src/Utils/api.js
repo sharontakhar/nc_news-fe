@@ -27,10 +27,12 @@ export const apiGetArticlesByTopic = (topic) => {
 };
 
 export const apiGetArticlesByArticleId = (id) => {
-  console.log(id, "id from api.js");
   return axios
     .get(`https://nc-news-be-app.herokuapp.com/api/articles/${id}`)
     .then(({ data }) => {
       return data;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
