@@ -36,3 +36,13 @@ export const apiGetArticlesByArticleId = (id) => {
       console.log(err);
     });
 };
+
+export const apiPatchVotes = (id, singleVote) => {
+  return axios
+    .patch(`https://nc-news-be-app.herokuapp.com/api/articles/${id}`, {
+      inc_votes: singleVote,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

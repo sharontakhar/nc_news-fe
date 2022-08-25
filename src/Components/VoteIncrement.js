@@ -1,23 +1,25 @@
-import { apiGetArticlesByArticleId } from "../Utils/api";
+import { apiPatchVotebyArticleId } from "../Utils/api";
+import { apiPatchVotes } from "../Utils/api";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const VoteIncrement = () => {
   const [vote, setVotes] = useState(0);
+  const [newErrs, setNewErrs] = useState();
   let { article } = useParams();
 
-  useEffect(() => {
-    apiGetArticlesByArticleId(article).then((response) => {
-      setVotes(response.articles.votes);
-    });
-  }, [article]);
-
-  const incrementVote = () => {
-    setVotes(vote + 1);
-  };
-
-  const decrementVote = () => {
-    setVotes(vote - 1);
+  const handleVote = (singleVote) => {
+    setVotes((currentVote) => currentVote + singleVote);
+    apiPatchVotes(article, vote)
+      .then(() => {
+        setNewErrs(null);
+        console.log("the vote has been updated");
+      })
+      .catch(() => {
+        console.log(newErrs);
+        setVotes((currentVote) => currentVote - singleVote);
+        setNewErrs("Something went wrong, please try again.");
+      });
   };
 
   return (
@@ -27,18 +29,24 @@ const VoteIncrement = () => {
         <button
           id="voteButton"
           className="btn btn-warning btn-lrg"
-          onClick={incrementVote}
+          onClick={(e) => {
+            e.preventDefault();
+            handleVote(1);
+          }}
         >
           RATE IT
         </button>
-
         <button
           id="voteButton"
           className="btn btn-warning btn-lrg"
-          onClick={decrementVote}
+          onClick={(e) => {
+            e.preventDefault();
+            handleVote(-1);
+          }}
         >
           UNDO VOTE
         </button>
+        {console.log(vote)}
       </div>
     </div>
   );
