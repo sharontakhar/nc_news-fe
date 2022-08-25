@@ -46,3 +46,19 @@ export const apiPatchVotes = (id, singleVote) => {
       return data;
     });
 };
+
+export const apiGetComments = (id) => {
+  return axios
+    .get(`https://nc-news-be-app.herokuapp.com/api/articles/${id}/comments`)
+    .then(({ data }) => {
+      return data;
+    });
+};
+
+export const apiPostComments = (id) => {
+  return axios
+    .post(`https://nc-news-be-app.herokuapp.com/api/articles/${id}/comments`)
+    .then(({ data }) => {
+      return data;
+    });
+};

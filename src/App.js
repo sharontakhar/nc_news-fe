@@ -7,6 +7,7 @@ import ArticlePage from "./Components/ArticlePage";
 import Logo from "./Components/Logo.js";
 import Navbar from "./Components/Navbar";
 import Topics from "./Components/Topics";
+import CommentPage from "./Components/CommentPage";
 import TopicPage from "./Components/TopicPage";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/topics" element={<Topics />} />
           <Route path="/topics/:topic" element={<TopicPage />} />
           <Route path="/articles/:article" element={<ArticlePage />} />
+          <Route path="/articles/:article/comments" element={<CommentPage />} />
         </Routes>
       </div>
     </BrowserRouter>
