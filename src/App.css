@@ -16,6 +16,28 @@
   margin: 10px;
 }
 
+.topic_article_div {
+  display: inline-block;
+  justify-content: space-around;
+  background-color: rgb(200, 201, 202);
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  height: 80px;
+  margin: 20px;
+}
+.topic_article_div Link {
+  align-self: center;
+}
+
+.id_div {
+  text-align: center;
+  text-decoration-line: underline;
+  color: black;
+  font-size: larger;
+  font-weight: bolder;
+}
+
 .article_div {
   background-color: rgb(200, 201, 202);
   margin: auto;
