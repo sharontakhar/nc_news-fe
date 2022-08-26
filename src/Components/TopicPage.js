@@ -10,13 +10,13 @@ const TopicPage = () => {
     apiGetArticlesByTopic(topic).then((response) => {
       setTopics(response.articles);
     });
-  }, []);
+  }, [topic]);
 
   return (
     <div>
       {topics.map((topic) => {
         return (
-          <div className="article_div">
+          <div className="article_div" key={topic.slug}>
             <h5>{topic.title}</h5>
             <p>{topic.body}</p>
           </div>
