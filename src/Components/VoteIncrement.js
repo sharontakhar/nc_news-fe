@@ -46,7 +46,6 @@ const VoteIncrement = () => {
         >
           UNDO VOTE
         </button>
-        {console.log(vote)}
       </div>
     </div>
   );
