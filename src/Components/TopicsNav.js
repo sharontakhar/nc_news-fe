@@ -1,4 +1,5 @@
 import { apiGetTopics } from "../Utils/api";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 const TopicsNav = () => {
@@ -16,9 +17,9 @@ const TopicsNav = () => {
         <select className="selectTopic">
           {topicsNav.map((topic) => {
             return (
-              <option key={topic.slug} value="option 1">
+              <div className="topicOps" key={topic.slug} value="option 1">
                 {topic.slug}
-              </option>
+              </div>
             );
           })}
         </select>

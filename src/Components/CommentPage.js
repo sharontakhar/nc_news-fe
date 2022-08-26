@@ -4,22 +4,31 @@ import { useParams } from "react-router-dom";
 import PostComment from "../Components/PostComment";
 
 const CommentPage = () => {
-  const [comments, setComments] = useState({});
+  const [comments, setComments] = useState([]);
   let { article } = useParams();
 
   useEffect(() => {
     apiGetComments(article).then((response) => {
-      console.log(response.comments);
+      console.log(response, "response");
       setComments(response.comments);
     });
   }, [article]);
-  return (
-    <div className="article_div">
-      <p>{comments.author}</p>
-      <p>{comments.body}</p>
-      <p>{comments.votes}</p>
 
-      <div>
+  return (
+    <div>
+      {comments.map((comment) => {
+        return (
+          <div className="article_div">
+            <h5>{comment.author}</h5>
+            <p>{comment.body}</p>
+            <p>votes:{comment.votes}</p>
+          </div>
+        );
+      })}
+
+      <div className="article_div">
+        {" "}
+        <h5>Post your comments here:</h5>
         <PostComment />
       </div>
     </div>

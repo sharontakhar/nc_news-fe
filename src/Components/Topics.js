@@ -14,8 +14,10 @@ const Topics = () => {
     <div>
       {topics.map((topic) => {
         return (
-          <div key={topic.slug}>
-            <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
+          <div className="topic_article_div" key={topic.slug}>
+            <Link className="id_div" to={`/topics/${topic.slug}`}>
+              {topic.slug}
+            </Link>
           </div>
         );
       })}
