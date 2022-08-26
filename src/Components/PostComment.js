@@ -11,11 +11,11 @@ const PostComment = () => {
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
         <input
-          type="email"
+          type="username"
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
-          placeholder="Enter email"
+          placeholder="Enter your username here"
         />
         <small id="emailHelp" class="form-text text-muted">
           We'll never share your email with anyone else.
@@ -24,10 +24,10 @@ const PostComment = () => {
       <div class="form-group">
         <label for="exampleInputPassword1">Comment</label>
         <input
-          type="password"
+          type="comment"
           class="form-control"
           id="exampleInputPassword1"
-          placeholder="Password"
+          placeholder="add your comment ..."
         />
       </div>
       <button type="submit" class="btn btn-primary">
