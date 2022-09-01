@@ -55,9 +55,11 @@ export const apiGetComments = (id) => {
     });
 };
 
-export const apiPostComments = (id) => {
+export const apiPostComments = (id, commentsData) => {
   return axios
-    .post(`https://nc-news-be-app.herokuapp.com/api/articles/${id}/comments`)
+    .post(`https://nc-news-be-app.herokuapp.com/api/articles/${id}/comments`, {
+      commentsData,
+    })
     .then(({ data }) => {
       return data;
     });

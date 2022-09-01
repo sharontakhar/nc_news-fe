@@ -9,7 +9,6 @@ const CommentPage = () => {
 
   useEffect(() => {
     apiGetComments(article).then((response) => {
-      console.log(response, "response");
       setComments(response.comments);
     });
   }, [article]);

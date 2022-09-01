@@ -1,36 +1,61 @@
 import { apiPostComments } from "../Utils/api";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const PostComment = () => {
-  const [] = useState();
-  let { article } = useParams();
+  const [postComment, setPostComments] = useState({
+    username: "",
+    body: "",
+  });
+
+  const [validSubmit, setValidSubmit] = useState(true);
+  const [successfulSubmit, setSuccessfulSubmit] = useState(true);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setPostComments({
+      ...postComment,
+      [e.target.name]: value,
+    });
+    console.log(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const commentsData = {
+      username: postComment.username,
+      body: postComment.body,
+    };
+    console.log(commentsData, "commsdata");
+  };
 
   return (
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label for="exampleInputPassword1">Username</label>
         <input
           type="username"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Enter your username here"
+          className="form-control"
+          id="exampleInputPassword1"
+          placeholder="your username"
+          name="username"
+          value={postComment.username}
+          onChange={handleChange}
         />
-        <small id="emailHelp" class="form-text text-muted">
-          We'll never share your email with anyone else.
-        </small>
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <label for="exampleInputPassword1">Comment</label>
         <input
-          type="comment"
-          class="form-control"
+          type="body"
+          className="form-control"
           id="exampleInputPassword1"
           placeholder="add your comment ..."
+          name="body"
+          value={postComment.body}
+          onChange={handleChange}
         />
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Submit
       </button>
     </form>

@@ -2,6 +2,7 @@ import { apiGetTopics } from "../Utils/api";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
+
 const TopicsNav = () => {
   const [topicsNav, setTopicsNav] = useState([]);
 
@@ -27,4 +28,5 @@ const TopicsNav = () => {
     </div>
   );
 };
+
 export default TopicsNav;

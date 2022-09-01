@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import Topics from "../Components/Topics";
 
 const Navbar = () => {
   return (
@@ -10,7 +9,7 @@ const Navbar = () => {
           <Link to="/articles">Home</Link>
         </div>
         <div className="ClickableLink">
-          <Link to="/topics">Topics</Link>
+          <Link to="/topics/topic">Topics</Link>
         </div>
         <form className="d-flex input-group w-auto">
           <input

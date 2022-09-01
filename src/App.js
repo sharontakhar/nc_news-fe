@@ -19,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/articles" element={<Articles />} />
           <Route path="/topics" element={<Topics />} />
+          <Route path="/topics/:topic" element={<Topics />} />
           <Route path="/topics/:topic" element={<TopicPage />} />
           <Route path="/articles/:article" element={<ArticlePage />} />
           <Route path="/articles/:article/comments" element={<CommentPage />} />

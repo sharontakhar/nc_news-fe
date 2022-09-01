@@ -1,6 +1,8 @@
 import { apiGetTopics } from "../Utils/api";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import TopicPage from "./TopicPage";
+
 const Topics = () => {
   const [topics, setTopics] = useState([]);
 
@@ -21,6 +23,10 @@ const Topics = () => {
           </div>
         );
       })}
+
+      <div className="article_div">
+        <TopicPage />
+      </div>
     </div>
   );
 };
