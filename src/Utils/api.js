@@ -55,11 +55,25 @@ export const apiGetComments = (id) => {
     });
 };
 
-export const apiPostComments = (id, commentsData) => {
+export const apiPostComments = (article_id, bodydata) => {
   return axios
-    .post(`https://nc-news-be-app.herokuapp.com/api/articles/${id}/comments`, {
-      commentsData,
+    .post(
+      `https://nc-news-be-app.herokuapp.com/api/articles/${article_id}/comments`,
+      bodydata
+    )
+    .then(({ data }) => {
+      return data;
     })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const apiGetArticlesSorted = (created_at) => {
+  return axios
+    .get(
+      `https://nc-news-be-app.herokuapp.com/api/articles?sort_by=${created_at}`
+    )
     .then(({ data }) => {
       return data;
     });

@@ -1,36 +1,30 @@
 import { apiPostComments } from "../Utils/api";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import CommentPage from "./CommentPage";
 
-const PostComment = () => {
-  const [postComment, setPostComments] = useState({
-    username: "",
-    body: "",
-  });
+const PostComment = ({ article }) => {
+  const [err, setErr] = useState(true);
+  const [viewComment, setViewComment] = useState([]);
+  const [comment, setComment] = useState([
+    {
+      username: "",
+      body: "",
+    },
+  ]);
 
-  const [validSubmit, setValidSubmit] = useState(true);
-  const [successfulSubmit, setSuccessfulSubmit] = useState(true);
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    setPostComments({
-      ...postComment,
-      [e.target.name]: value,
+  useEffect(() => {
+    apiPostComments(article).then(({ response }) => {
+      console.log(response, "RESPONSE");
+      setComment(response);
     });
-    console.log(value);
-  };
+  }, [article]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const commentsData = {
-      username: postComment.username,
-      body: postComment.body,
-    };
-    console.log(commentsData, "commsdata");
-  };
+  // const handleSubmit = () => {
+  //   setViewComment(!viewComment);
+  // };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div className="form-group">
         <label for="exampleInputPassword1">Username</label>
         <input
@@ -39,8 +33,11 @@ const PostComment = () => {
           id="exampleInputPassword1"
           placeholder="your username"
           name="username"
-          value={postComment.username}
-          onChange={handleChange}
+          onChange={(e) => {
+            const value = e.target.value;
+            console.log(value, "value username");
+            setComment({ ...comment, [e.target.name]: value });
+          }}
         />
       </div>
       <div className="form-group">
@@ -51,11 +48,17 @@ const PostComment = () => {
           id="exampleInputPassword1"
           placeholder="add your comment ..."
           name="body"
-          value={postComment.body}
-          onChange={handleChange}
+          onChange={(e) => {
+            const value = e.target.value;
+            console.log(value, "value comment");
+            setComment({ ...comment, [e.target.name]: value });
+          }}
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button
+        // onSubmit={handleSubmit}
+        className="btn btn-primary"
+      >
         Submit
       </button>
     </form>

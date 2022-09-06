@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import Sortby from "./Sortby";
 
 const Navbar = () => {
   return (
@@ -26,6 +27,7 @@ const Navbar = () => {
             <i className="fas fa-search"></i>
           </span>
         </form>
+        <Sortby />
       </div>
     </nav>
   );
