@@ -14,24 +14,13 @@ const Sortby = () => {
     });
   }, [sorted]);
 
-  const handleSubmit = (e) => {};
+  // const handleSubmit = (e) => {};
   return (
     <>
-      <div class="dropdown">
-        <button class="dropbtn">Filter</button>
-        <div class="dropdown-content">
-          <a href="#">Date</a>
-        </div>
+      <div className="dropdown">
+        <button className="dropbtn">Filter</button>
+        <div className="dropdown-content">{/* <a href="#">Date</a> */}</div>
       </div>
-
-      {/* <div class="dropdown">
-        <button class="dropbtn">Filter by Topic</button>
-        <div class="dropdown-content">
-          <a href="#">Coding</a>
-          <a href="#">Football</a>
-          <a href="#">Cooking</a>
-        </div>
-      </div> */}
     </>
   );
 };
