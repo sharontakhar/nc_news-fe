@@ -87,3 +87,12 @@ export const apiDeleteComment = (comment_id) => {
       console.log(data);
     });
 };
+
+export const apiGetQueryArticles = async (sortBy, order) => {
+  const queryString = `?sort_by=${sortBy}&order=${order}`;
+  const article = await axios.get(
+    `https://nc-news-be-app.herokuapp.com/api/articles${queryString}`
+  );
+  const { data } = article;
+  return data;
+};

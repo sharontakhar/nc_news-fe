@@ -1,54 +1,101 @@
+body {
+  background-color: rgb(11, 37, 69);
+  padding: 0 40px;
+}
+nav.navbar {
+  padding: 20px;
+}
+
+.navbar.ClickableLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header {
+  padding: 30px;
+}
+
 .App {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(252, 136, 3);
+}
+
+topic_article_div {
+  background-color: rgb(11, 37, 69);
+}
+
+.ClickableLink a {
+  padding: 10px 0;
+}
+
 .ClickableLink {
-  color: white;
-  font-size: 30px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: rgb(238, 244, 237);
 }
 
 .logo {
-  font-family: "Russo One", sans-serif;
-  font-size: 70px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: rgb(238, 244, 237);
 }
 
 #voteButton {
   margin: 10px;
 }
 
+.sorted_article_div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 10px;
+}
 .topic_article_div {
-  display: inline-block;
-  justify-content: space-around;
-  background-color: rgb(200, 201, 202);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   border-radius: 10px;
   padding: 20px;
   width: 200px;
   height: 80px;
   margin: 20px;
 }
-.topic_article_div Link {
-  align-self: center;
+.link_to_div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .id_div {
-  text-align: center;
   text-decoration-line: underline;
-  color: black;
+  text-decoration: none;
+  color: rgb(252, 136, 3);
   font-size: larger;
   font-weight: bolder;
 }
 
+.sorted_article_div,
 .article_div {
-  background-color: rgb(200, 201, 202);
-  margin: auto;
+  background-color: rgb(141, 169, 196);
+  display: flex;
+  margin: 20px;
   width: 50%;
-  border: 20px solid white;
+  border: 20px solid rgb(238, 244, 237);
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(19, 64, 116);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -69,4 +116,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.article_div {
+  margin: 28px auto;
 }

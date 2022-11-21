@@ -2,7 +2,7 @@ import { apiPostComments as postComments } from "../Utils/api";
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import UserContext from "./User";
-import { useParams } from "react-router-dom";
+import CommentPage from "./CommentPage";
 
 const CommentForm = ({ article, onSubmitNewComment }) => {
   const {

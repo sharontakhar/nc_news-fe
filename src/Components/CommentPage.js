@@ -1,4 +1,4 @@
-import { apiGetComments as getComments } from "../Utils/api";
+import { apiGetComments } from "../Utils/api";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import UserContext from "./User.js";
@@ -14,7 +14,8 @@ const CommentPage = () => {
   const user = useContext(UserContext);
 
   useEffect(() => {
-    getComments(article).then((response) => {
+    apiGetComments(article).then((response) => {
+      console.log(response);
       setComments(response.comments);
     });
   }, [article]);

@@ -13,16 +13,16 @@ const TopicPage = () => {
   }, [topic]);
 
   return (
-    <div>
+    <>
       {topics.map((topic) => {
         return (
-          <div className="article_div" key={topic.slug}>
+          <div key={topic.slug}>
             <h5>{topic.title}</h5>
             <p>{topic.body}</p>
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 //};
