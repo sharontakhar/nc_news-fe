@@ -1,10 +1,10 @@
-import { apiGetComments } from "../Utils/api";
+import { apiGetComments } from "../../Utils/api";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import UserContext from "./User.js";
+import UserContext from "./../User.js";
 import CommentForm from "./CommentForm";
 import DeleteComment from "./DeleteComment";
-import { apiPostComments } from "../Utils/api";
+import { apiPostComments } from "../../Utils/api";
 
 const CommentPage = () => {
   const [comments, setComments] = useState([]);

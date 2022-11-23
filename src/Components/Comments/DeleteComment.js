@@ -1,4 +1,4 @@
-import { apiDeleteComment } from "../Utils/api";
+import { apiDeleteComment } from "../../Utils/api";
 
 const DeleteComment = ({ commentId, comments, deleteOnSubmit }) => {
   const handleClickDelete = async () => {

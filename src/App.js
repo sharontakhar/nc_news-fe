@@ -1,20 +1,16 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { useState } from "react";
-// import AdBanner from "./images/ad_banner.png";
-import Articles from "./Components/Articles";
-import ArticlePage from "./Components/ArticlePage";
-import Logo from "./Components/Logo.js";
-import Navbar from "./Components/Navbar";
-import Topics from "./Components/Topics";
-import CommentPage from "./Components/CommentPage";
-import TopicPage from "./Components/TopicPage";
+import Articles from "../src/Components/Articles/Articles";
+import ArticlePage from "../src/Components/Articles/ArticlePage";
+import Navbar from "../src/Components/Header/Navbar";
+import Topics from "../src/Components/Topics/Topics";
+import CommentPage from "../src/Components/Comments/CommentPage";
+import TopicPage from "../src/Components/Topics/TopicPage";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Logo />
         <Navbar />
         <Routes>
           <Route path="/articles" element={<Articles />} />

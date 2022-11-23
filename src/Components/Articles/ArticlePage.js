@@ -1,7 +1,7 @@
-import { apiGetArticlesByArticleId } from "../Utils/api";
+import { apiGetArticlesByArticleId } from "../../Utils/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import VoteIncrement from "./VoteIncrement";
+import VoteIncrement from "../Comments/VoteIncrement";
 import { Link } from "react-router-dom";
 
 const ArticlePage = () => {

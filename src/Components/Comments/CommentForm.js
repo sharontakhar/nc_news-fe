@@ -1,7 +1,7 @@
-import { apiPostComments as postComments } from "../Utils/api";
+import { apiPostComments as postComments } from "../../Utils/api";
 import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import UserContext from "./User";
+import UserContext from "../User";
 import CommentPage from "./CommentPage";
 
 const CommentForm = ({ article, onSubmitNewComment }) => {

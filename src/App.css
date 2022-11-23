@@ -1,8 +1,28 @@
 body {
-  background-color: rgb(11, 37, 69);
+  background-color: #2f365f;
   padding: 0 40px;
 }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+.NewsVerticalImg {
+  padding: auto;
+  margin: auto;
+}
+.BannerVerticalImg:nth-child(n) {
+  float: left;
+}
+.BannerVerticalImg:nth-child(2) {
+  float: right;
+}
+
+.navbar {
+  background-color: #0c0630;
+}
 nav.navbar {
+  width: 100%;
   padding: 20px;
 }
 
@@ -13,6 +33,7 @@ nav.navbar {
 }
 
 .Header {
+  background-color: #1b1b1d;
   padding: 30px;
 }
 
@@ -22,15 +43,17 @@ nav.navbar {
 
 a {
   text-decoration: none;
-  color: rgb(252, 136, 3);
+  color: #d79922;
 }
 
-topic_article_div {
+.topic_article_div {
   background-color: rgb(11, 37, 69);
 }
 
-.ClickableLink a {
-  padding: 10px 0;
+.container-link {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
 }
 
 .ClickableLink {
@@ -41,10 +64,12 @@ topic_article_div {
 }
 
 .logo {
+  margin: auto;
+  display: inline-block;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
-  font-size: 30px;
-  color: rgb(238, 244, 237);
+  font-size: 26px;
+  color: #c5cbe3;
 }
 
 #voteButton {
@@ -57,20 +82,13 @@ topic_article_div {
   justify-content: space-between;
   border-radius: 10px;
 }
+
 .topic_article_div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 20px;
-  width: 200px;
-  height: 80px;
+  align-items: center; /* aligns all the items vertically centered */
+  justify-content: center; /* aligns all the items horizontally centered */
   margin: 20px;
-}
-.link_to_div {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .id_div {
@@ -83,15 +101,19 @@ topic_article_div {
 
 .sorted_article_div,
 .article_div {
-  background-color: rgb(141, 169, 196);
+  background-color: #c5cbe3;
+  box-shadow: 0 2.8px 2.2px rgba(5, 5, 5, 0.034),
+    0 6.7px 5.3px rgba(9, 9, 9, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(3, 3, 3, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(9, 1, 1, 0.12);
   display: flex;
-  margin: 20px;
-  width: 50%;
-  border: 20px solid rgb(238, 244, 237);
-  padding: 20px;
+  padding: 50px;
+  margin: auto;
+  width: 60%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  border-radius: 12px;
 }
 
 .App-header {

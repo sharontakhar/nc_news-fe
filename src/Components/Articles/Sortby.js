@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { apiGetQueryArticles } from "../Utils/api";
-import Articles from "./Articles";
+import React from "react";
+import { useState, useEffect } from "react";
+import { apiGetQueryArticles } from "../../Utils/api";
 
 const SortArticles = () => {
-  const [sortByParam, setSortbyParam] = useState();
-  const [order, setOrder] = useState();
-  const [articles, setArticles] = useState();
+  const [sortByParam, setSortbyParam] = useState("votes");
+  const [order, setOrder] = useState("DESC");
+  const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     apiGetQueryArticles(sortByParam, order).then(({ articles }) => {
@@ -15,12 +15,10 @@ const SortArticles = () => {
   }, [sortByParam, order]);
 
   const handleSubmit = (event) => {
-    // const sortBy = search.get("sortBy") || null;
     setSortbyParam(event.target.value);
   };
 
   const handleSubmitOrder = (event) => {
-    // const order = search.get("order") || null;
     setOrder(event.target.value);
   };
 
@@ -30,7 +28,7 @@ const SortArticles = () => {
         <select
           className="dropdown"
           onChange={handleSubmit}
-          value={sortByParam}
+          value={setSortbyParam}
         >
           <option
             className="dropdown-content"
@@ -52,22 +50,21 @@ const SortArticles = () => {
             descending
           </option>
         </select>
+        <div>
+          {articles.map((article) => {
+            return (
+              <div className="article_div" key={article.article_id}>
+                <h5>Title: {article.title}</h5>
+                {article.body}
+                <p>date posted: {article.created_at}</p>
+                <p>votes: {article.votes}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      {/* <Articles articles={articles} setArticle={setArticles} /> */}
-      {articles.map((article) => {
-        return (
-          <div className="sorted_article_div">
-            <h5>Title: {article.title}</h5>
-            <br></br>
-            {article.body}
-            <br></br>
-            <br></br>
-            <p>date posted: {article.created_at}</p>
-            <p>votes: {article.votes}</p>
-          </div>
-        );
-      })}
     </>
   );
 };
+
 export default SortArticles;

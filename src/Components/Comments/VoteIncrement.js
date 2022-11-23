@@ -1,5 +1,5 @@
-import { apiPatchVotebyArticleId } from "../Utils/api";
-import { apiPatchVotes } from "../Utils/api";
+import { apiPatchVotebyArticleId } from "../../Utils/api";
+import { apiPatchVotes } from "../../Utils/api";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 

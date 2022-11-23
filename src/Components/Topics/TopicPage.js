@@ -1,4 +1,4 @@
-import { apiGetArticlesByTopic } from "../Utils/api";
+import { apiGetArticlesByTopic } from "../../Utils/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -14,14 +14,17 @@ const TopicPage = () => {
 
   return (
     <>
-      {topics.map((topic) => {
-        return (
-          <div key={topic.slug}>
-            <h5>{topic.title}</h5>
-            <p>{topic.body}</p>
-          </div>
-        );
-      })}
+      <div>
+        {topics.map((topic) => {
+          return (
+            <div key={topic.slug} className="article_div">
+              <h5>{topic.title}</h5>
+              <br></br>
+              <p>{topic.body}</p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
